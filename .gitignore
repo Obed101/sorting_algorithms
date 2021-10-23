@@ -1,0 +1,14 @@
+# Ignore main.c
+*main.c
+
+# Ignore files
+*~
+
+# Ignore print_array.c
+print_array.c
+
+# Ignore print_list.c
+print_list.c
+
+# Ignore hash files
+*#
