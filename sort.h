@@ -5,14 +5,8 @@
 #include <stddef.h>
 #include <stdio.h>
 
-void swap(int *x, int *y)
-{
-    int temp = *x;
-    *x = *y;
-    *y = temp;
-}
+void swap(int *x, int *y);
 
-/* DATA STRUCTURES */
 /**
  * struct listint_s - Doubly linked list node
  *
