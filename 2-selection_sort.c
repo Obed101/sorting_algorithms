@@ -16,25 +16,24 @@ void selection_sort(int *array, size_t size)
 
 	if (size >= 2)
 	{
-	for (i = 0; i < size; i++)
-	{	
-		comp = array[i];
-		size_t min = i;
-		for (j = i; j < size; j++)
+		for (i = 0; i < size; i++)
 		{
-			if (comp > array[j])
+			comp = array[i];
+			size_t min = i;
+			for (j = i; j < size; j++)
 			{
-				min = j;
-				comp = array[j];
+				if (comp > array[j])
+				{
+					min = j;
+					comp = array[j];
+				}
 			}
+			if (comp == array[i] && min == i)
+				continue;
+			/*else, swap*/
+			array[min] = array[i];
+			array[i] = comp;
+			print_array(array, size);
 		}
-		if (comp == array[i] && min == i)
-		continue;
-		/*else, swap*/
-		array[min] = array[i];
-		array[i] = comp;
-		print_array(array, size);
-		
 	}
-}
 }
