@@ -24,5 +24,5 @@ void insertionSort(DoublyLinkedList * me)
 		front = front->next;
 	}
 }
-
-Soerting algorithms are implemented in every Data Science project That exists
+```
+Sorting algorithms are implemented in every Data Science project That exists
