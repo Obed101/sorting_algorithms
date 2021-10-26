@@ -42,10 +42,8 @@ void insertion_sort_list(listint_t **list)
 			current->prev = current->next = NULL;
 			sortedInsert(&sorted, current);
 			current = nxt;
+			print_list(*list);
 		}
-		sortedInsert(&sorted, current);
-		current = nxt;
-		print_list(*list);
+		*list = sorted;
 	}
-	*list = sorted;
 }
