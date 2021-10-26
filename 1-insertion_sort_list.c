@@ -1,13 +1,5 @@
 #include "sort.h"
 
-/**
- * sortedInsert - a function that sorts an array
- *
- * @head_ref: double pointer head_ref
- * @newNode: pointer newNode
- *
- */
-
 void sortedInsert(listint_t **head_ref, listint_t *newNode)
 {
 
@@ -50,10 +42,8 @@ void insertion_sort_list(listint_t **list)
 			current->prev = current->next = NULL;
 			sortedInsert(&sorted, current);
 			current = nxt;
+			print_list(*list);
 		}
-		sortedInsert(&sorted, current);
-		current = nxt;
-		print_list(*list);
+		*list = sorted;
 	}
-	*list = sorted;
 }
