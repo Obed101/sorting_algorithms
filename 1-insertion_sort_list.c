@@ -10,9 +10,8 @@ void sortedInsert(listint_t **head_ref, listint_t *newNode)
     if (*head_ref == NULL)
         *head_ref = newNode;
  
-    // if the node is to be inserted at the beginning
-    // of the doubly linked list
-    if ((*head_ref)->n >= newNode->n)
+ 
+    else if ((*head_ref)->n >= newNode->n)
 {
         newNode->next = *head_ref;
         newNode->next->prev = newNode;
@@ -24,16 +23,14 @@ void sortedInsert(listint_t **head_ref, listint_t *newNode)
  
         while (current->next && current->next->n < newNode->n)
             current = current->next;
-            print_list(*head_ref);
  
-        /*Make the appropriate links */
+        /*Making the appropriate links */
  
         newNode->next = current->next;
  
         /* if the new node not appended*/
         if (current->next != NULL)
             newNode->next->prev = newNode;
-            print_list(*head_ref);
  
         current->next = newNode;
         newNode->prev = current;
@@ -45,20 +42,18 @@ void insertion_sort_list(listint_t **list)
 	listint_t *sorted = NULL;
 	listint_t *current = *list;
 	
-	while (current )
+	while (current)
 	{
 		/*storing next for next iteration*/
 		listint_t *nxt = current->next;
 		/*remove all links to create 'current'*/
 		current->prev = current->next = NULL;
-		
 		sortedInsert(&sorted, current);
 		current = nxt;
-		//print_list(*list);
+		print_list(*list);
 	}
 	
 	*list = sorted;
-	//print_list(*list);
 }
 
 listint_t *create_listint(const int *array, size_t size)
