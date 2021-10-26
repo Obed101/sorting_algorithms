@@ -28,11 +28,11 @@ void sortedInsert(listint_t **head_ref, listint_t *newNode)
 
 void insertion_sort_list(listint_t **list)
 {
-	listint_t *nxt, *sorted;
+	listint_t *nxt, *sorted, *current;
 	if (list)
 	{
 		sorted = NULL;
-		listint_t *current = *list;
+		current = *list;
 
 		while (current )
 		{
