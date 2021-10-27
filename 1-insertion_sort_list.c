@@ -1,18 +1,24 @@
 #include "sort.h"
 
+/**
+ * sortedInsert - Prints an array of integers using the insertion sort.
+ *
+ * @head_ref: First node of the list
+ * @newNode: Node the head points to
+ */
 void sortedInsert(listint_t **head_ref, listint_t *newNode)
 {
 
 	listint_t *current;
 	/*if list is empty*/
 
-    if (*head_ref == NULL)
-        *head_ref = newNode;
-    else if ((*head_ref)->n >= newNode->n)
-{
-        newNode->next = *head_ref;
-        newNode->next->prev = newNode;
-        *head_ref = newNode;
+if (*head_ref == NULL)  
+  *head_ref = newNode; 
+ else if ((*head_ref)->n >= newNode->n)
+{  
+  newNode->next = *head_ref;
+  newNode->next->prev = newNode;
+  *head_ref = newNode;
 }
     else {
         current = *head_ref;
