@@ -11,8 +11,8 @@ void insertionSort(DoublyLinkedList * me)
 		/* Get next node*/
 		back = front->next;
 		/* Update node value when consecutive nodes are not sort*/
-		while (back != NULL && 
-               back->prev != NULL && 
+		while (back != NULL &&
+               back->prev != NULL &&
                back->data < back->prev->data)
 		{
 			/* Modified node data*/
