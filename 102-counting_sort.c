@@ -2,6 +2,14 @@
 #define RANGE 255
 #include <string.h>
 
+/**
+ * counting_sort - a function that sorts using the counting sort algorithm
+ *
+ * @array: array to be sorted
+ * @size: the size
+ *
+ */
+
 void counting_sort(int *array, size_t size)
 {
 	int out[size], i, count[RANGE + 1];
