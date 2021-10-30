@@ -69,11 +69,12 @@ int r_largest(int *array, size_t size)
 
 
 /**
- * copy_elements - fills array a with values in array b
- * @arra: array a
- * @arrb: array b
+ * copy_elements - copy array2 elements into arra1
+ * @arr1: second array
+ * @arr2: first array
  * @size: size both arrays should be same size
- */
+ * Return: int 0
+*/
 
 int copy_elements(int *arr1, int *arr2, size_t size)
 {
