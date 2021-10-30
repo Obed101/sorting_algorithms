@@ -44,7 +44,7 @@ int partition(int arr[], int low, int high)
 			i++;
 		}
 	}
-	if (arr[i] < arr[high])
+	if (arr[i] != arr[high])
 	{
 		swap(&i, &high);
 		print_array(arr, size);
