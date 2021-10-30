@@ -6,11 +6,12 @@
  */
 void shell_sort(int *array, size_t size)
 {
+	int j, k;
+	size_t inc, i;
 	if (size < 2)
 	{
 		return;
 	}
-	int i, j, k, inc;
 
 	inc = 1;
 
@@ -23,8 +24,8 @@ void shell_sort(int *array, size_t size)
 			k = array[i];
 			for (j = i - inc; j >= 0 && k < array[j]; j = j - inc)
 				array[j + inc] = k;
-			print_array(array, size);
 		}
 		inc /= 3;
+		print_array(array, size);
 	}
 }
