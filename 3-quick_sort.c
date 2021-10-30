@@ -17,10 +17,10 @@ void swap(int *a, int *b)
  * @arr: array of ints
  * @low: the lower ind
  * @high: the higher ind
- * @size: thats the seze of the array
+ *
  * Return: parted array
  */
-int partition(int arr[], int low, int high, size_t size)
+int partition(int arr[], int low, int high)
 {
 	int j;
 	int pivot = arr[high];
@@ -32,12 +32,12 @@ int partition(int arr[], int low, int high, size_t size)
 		{
 			i++;
 			swap(&arr[i], &arr[j]);
-			print_array(arr, size);
+//		 	print_array(arr, size);
 		}
 	}
 	swap(&arr[i + 1], &arr[high]);
-	print_array(arr, size);
-	return (i + 1);
+/*	print_array(arr, size);*/
+	return (i);
 }
 
 /**
@@ -52,7 +52,8 @@ void quickSort(int arr[], int low, int high, size_t size)
 	if (low < high)
 	{
 		/* pi is partitioning index, arr[p] is now*/
-		int pi = partition(arr, low, high, size);
+		int pi = partition(arr, low, high);
+		print_array(arr, size);
 
 		quickSort(arr, low, pi - 1, size);
 		quickSort(arr, pi + 1, high, size);
