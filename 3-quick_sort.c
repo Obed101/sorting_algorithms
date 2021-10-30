@@ -27,16 +27,16 @@ int partition(int arr[], int low, int high)
 	int i = low;
 	static int size, c;
 
-	if (!c)
+	if (c == 0)
 	{
 		size = high + 1;
 		c++;
 	}
-	for (j = low; j <= high; j++)
+	for (j = low; j < high; j++)
 	{
-		if (arr[j] < pivot)
+		if (arr[j] <= pivot)
 		{
-			if (i < j)
+			if (i != j)
 			{
 				swap(&i, &j);
 				print_array(arr, size);
