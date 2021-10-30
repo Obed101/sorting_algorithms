@@ -32,7 +32,6 @@ int partition(int arr[], int low, int high)
 		{
 			i++;
 			swap(&arr[i], &arr[j]);
-//		 	print_array(arr, size);
 		}
 	}
 	swap(&arr[i + 1], &arr[high]);
@@ -49,10 +48,13 @@ int partition(int arr[], int low, int high)
  */
 void quickSort(int arr[], int low, int high, size_t size)
 {
+	int pi;
+
 	if (low < high)
 	{
 		/* pi is partitioning index, arr[p] is now*/
-		int pi = partition(arr, low, high);
+		pi = partition(arr, low, high);
+
 		print_array(arr, size);
 
 		quickSort(arr, low, pi - 1, size);
