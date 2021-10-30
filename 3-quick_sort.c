@@ -79,7 +79,7 @@ void quickSort(int arr[], int low, int pivot)
  */
 void quick_sort(int *array, size_t size)
 {
-	if (size >= 2 && array)
-
-		quickSort(array, 0, size - 1);
+	if (size == 0 || array == NULL)
+ 	   	return;
+	quickSort(array, 0, size - 1);
 }
