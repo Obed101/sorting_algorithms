@@ -28,23 +28,26 @@ int partition(int arr[], int low, int high)
 	static int size, c;
 
 	if (!c)
-	       size = high + 1; c++;
+	{
+		size = high + 1;
+		c++;
+	}
 	for (j = low; j <= high; j++)
 	{
 		if (arr[j] < pivot)
 		{
-			if (i != j)
+			if (i < j)
 			{
 				swap(&i, &j);
-				print_array(array, size);
+				print_array(arr, size);
 			}
 			i++;
 		}
 	}
-	if (i != right)
+	if (i != high)
 	{
-		swap(&i, &right);
-		print_array(array, size);
+		swap(&i, &high);
+		print_array(arr, size);
 	}
 	return (i);
 }
@@ -53,8 +56,7 @@ int partition(int arr[], int low, int high)
  * quickSort - sorts the array
  * @arr: the array
  * @low: lower array index
- * @high: high ind
- * @size: arr size
+ * @pivot: high ind
  */
 void quickSort(int arr[], int low, int pivot)
 {
