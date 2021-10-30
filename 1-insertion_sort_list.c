@@ -58,5 +58,7 @@ void insertion_sort_list(listint_t **list)
 			print_list(*list);
 		}
 		*list = sorted;
+		printf("\n\n\n%i\n\n", sorted->n);
+		print_list(*list);
 	}
 }
