@@ -24,18 +24,28 @@ int partition(int arr[], int low, int high)
 {
 	int j;
 	int pivot = arr[high];
-	int i = (low - 1);
+	int i = low;
+	static int size, c;
 
-	for (j = low; j <= high - 1; j++)
+	if (!c)
+	       size = high + 1; c++;
+	for (j = low; j <= high; j++)
 	{
 		if (arr[j] < pivot)
 		{
+			if (i != j)
+			{
+				swap(&i, &j);
+				print_array(array, size);
+			}
 			i++;
-			swap(&arr[i], &arr[j]);
 		}
 	}
-	swap(&arr[i + 1], &arr[high]);
-/*	print_array(arr, size);*/
+	if (i != right)
+	{
+		swap(&i, &right);
+		print_array(array, size);
+	}
 	return (i);
 }
 
@@ -46,19 +56,17 @@ int partition(int arr[], int low, int high)
  * @high: high ind
  * @size: arr size
  */
-void quickSort(int arr[], int low, int high, size_t size)
+void quickSort(int arr[], int low, int pivot)
 {
 	int pi;
 
-	if (low < high)
+	if (low < pivot)
 	{
 		/* pi is partitioning index, arr[p] is now*/
-		pi = partition(arr, low, high);
+		pi = partition(arr, low, pivot);
 
-		print_array(arr, size);
-
-		quickSort(arr, low, pi - 1, size);
-		quickSort(arr, pi + 1, high, size);
+		quickSort(arr, low, pi - 1);
+		quickSort(arr, pi + 1, pivot);
 	}
 }
 
@@ -71,5 +79,5 @@ void quick_sort(int *array, size_t size)
 {
 	if (size >= 2 && array)
 
-		quickSort(array, 0, size - 1, size);
+		quickSort(array, 0, size - 1);
 }
