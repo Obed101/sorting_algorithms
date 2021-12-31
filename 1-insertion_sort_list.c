@@ -1,13 +1,13 @@
 #include "sort.h"
 
 /**
- * swap - swap nodes of a list
+ * _swap - swaps nodes of a list
  * maintain ascending order
  * @n1: first node
  * @n2: second node
  * @head: the head
  */
-void swap(listint_t *n1, listint_t *n2, listint_t **head)
+void _swap(listint_t *n1, listint_t *n2, listint_t **head)
 {
 	listint_t *t1, *t2;
 
@@ -48,7 +48,7 @@ void insertion_sort_list(listint_t **list)
 		previous = current->prev;
 		while (previous && previous->n > current->n)
 		{
-			swap(previous, current, list);
+			_swap(previous, current, list);
 			print_list(*list);
 			previous = current->prev;
 		}
